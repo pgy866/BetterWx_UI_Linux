@@ -1,0 +1,98 @@
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap {
+  gap: 4px;
+}
+
+.m-x {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.m-y {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.m-b {
+  margin-bottom: 8px;
+}
+
+.m-r {
+  margin-right: 8px;
+}
+
+.p-t {
+  padding-top: 8px;
+}
+
+.p-b {
+  padding-bottom: 8px;
+}
+
+.p-y {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.border-b {
+  border-bottom: solid 1px;
+  border-color: color-mix(in srgb, var(--p-surface-200) calc(100%* var(--tw-border-opacity, 1)), transparent);
+}
+
+.float {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.container {
+  padding: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*全局缩放*/
+html {
+  font-size: 14px;
+}
