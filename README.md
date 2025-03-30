@@ -1,5 +1,3 @@
-以下是一个完整的README.md模板，包含开源项目所需的关键要素：
-
 ```markdown
 # Better WeChat for Linux
 
