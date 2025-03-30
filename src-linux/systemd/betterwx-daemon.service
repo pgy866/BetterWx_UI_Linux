@@ -1,0 +1,12 @@
+[Unit]
+Description=Better WeChat Linux Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/betterwx-linux --daemon
+Restart=on-failure
+User=%i
+
+[Install]
+WantedBy=multi-user.target
