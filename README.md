@@ -1,7 +1,27 @@
 # Better WeChat for Linux
 
-[![GitHub license](https://img.shields.io/github/license/your-org/betterwx-linux)](https://github.com/your-org/betterwx-linux/blob/main/LICENSE)
-[![Build Status](https://github.com/your-org/betterwx-linux/actions/workflows/build.yml/badge.svg)](https://github.com/your-org/betterwx-linux/actions)
+
+<h3 align="center"><img src="https://raw.githubusercontent.com/afaa1991/BetterWx-UI/refs/heads/1.1.3/src-tauri/icons/128x128@2x.png" width="250px"></h3>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-green">
+  <img src="https://img.shields.io/github/stars/afaa1991/BetterWx-UI">
+</p>
+
+
+# BetterWx-UI
+
+微信Windows版 支持4.0.2 双开&防撤回&多账号共存 UI工具
+支持平台：Windows x64
+
+版本支持：4.0+
+
+根据大佬 Zetaloop 开源 制作的 ui 工具
+
+大佬开源地址 [https://github.com/zetaloop/BetterWX](https://github.com/zetaloop/BetterWX)
+
+UI工具开源地址 [https://github.com/afaa1991/BetterWx-UI](https://github.com/afaa1991/BetterWx-UI)
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 
 适用于Linux系统的增强版微信客户端，基于Electron和Web技术构建，提供更友好的Linux桌面集成体验。
