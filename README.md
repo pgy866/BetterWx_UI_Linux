@@ -1,4 +1,3 @@
-```markdown
 # Better WeChat for Linux
 
 [![GitHub license](https://img.shields.io/github/license/your-org/betterwx-linux)](https://github.com/your-org/betterwx-linux/blob/main/LICENSE)
