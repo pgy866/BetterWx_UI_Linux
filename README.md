@@ -24,7 +24,6 @@ UI工具开源地址 [https://github.com/afaa1991/BetterWx-UI](https://github.co
 
 适用于Linux系统的增强版微信客户端，基于Electron和Web技术构建，提供更友好的Linux桌面集成体验。
 
-![截图](assets/screenshot.png)
 
 ## ✨ 功能特性
 
