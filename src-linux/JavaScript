@@ -1,0 +1,10 @@
+// 使用libnotify实现原生通知
+const { Notify } = require('node-notifier')
+
+function showNotification(msg) {
+  Notify.notify({
+    title: '微信消息',
+    icon: 'betterwx',
+    message: msg
+  })
+}

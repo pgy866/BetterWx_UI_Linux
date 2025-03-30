@@ -1,0 +1,13 @@
+# Electron
+dist/
+release/
+node_modules/
+
+# 编译文件
+build/
+*.o
+*.node
+
+# 环境文件
+.env
+*.log
