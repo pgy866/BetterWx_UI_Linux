@@ -9,10 +9,8 @@
 </p>
 
 
-# BetterWx-UI
-
-微信Windows版 支持4.0.2 双开&防撤回&多账号共存 UI工具
-支持平台：Windows x64
+微信Linux版 支持4.0.2 双开&防撤回&多账号共存 UI工具
+支持平台：linux x64
 
 版本支持：4.0+
 
@@ -142,46 +140,3 @@ git commit -s -m "feat: 添加神奇的新功能"
 git push origin feat/awesome-feature
 ```
 
-## 📜 许可证
-
-本项目采用 [MIT License](LICENSE)，另请注意：
-
-- 禁止基于本项目进行商业售卖
-- 需保留原始版权声明
-- 不得用于违反微信用户协议的行为
-
-## 📬 联系方式
-
-- 问题追踪：[GitHub Issues](https://github.com/your-org/betterwx-linux/issues)
-- 安全报告：security@betterwx.org
-- 社区讨论：[Discord Channel](https://discord.gg/your-invite-link)
-
-## 🙏 致谢
-
-- 原始Windows版本作者 [@afaa1991](https://github.com/afaa1991)
-- Electron 社区
-- Linux桌面测试人员们
-
----
-
-> **注意**：本项目与腾讯公司无关联，微信是腾讯公司的注册商标。使用前请阅读[用户协议](https://weixin.qq.com/agreement)
-```
-
-关键要素说明：
-
-1. **徽章系统**：显示构建状态、许可证等信息
-2. **结构化文档**：使用清晰的标题层级和表格排版
-3. **多代码块**：区分不同环境的安装指令
-4. **安全声明**：强调项目的安全设计和法律条款
-5. **贡献指南**：明确协作开发流程
-6. **可视化元素**：包含截图和快捷键表格
-7. **法律声明**：强调项目的中立性和合规要求
-
-建议补充内容：
-1. 在`assets/`目录添加实际截图
-2. 替换所有`your-org`为实际组织名称
-3. 添加CI/CD配置文件（如GitHub Actions）
-4. 补充详细的插件开发文档
-5. 添加国际化支持说明（如果需要）
-
-这个README兼顾了技术文档的严谨性和社区项目的友好性，可根据实际项目进展持续更新维护。
