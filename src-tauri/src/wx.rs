@@ -260,7 +260,7 @@ pub fn do_patch(patch_info: Value) -> Result<Vec<CoexistFileInfo>, MyError> {
             if let Some(mut patch) = patch_option {
                 let mut is_patched = get_bool_from_value(&patch_info, patch.name.as_str());
                 if is_coexist {
-                    is_patched = patch.config_item.is_force_patch | is_patched;
+                    is_patched |= patch.config_item.is_force_patch;
                     if patch.config_item.is_replace_num && patch.replace_num_loc != 0 {
                         patch.patch[patch.replace_num_loc] = num_u8;
                     }
@@ -429,18 +429,18 @@ fn search_patch(
 }
 
 /// Search hex data for a pattern
-fn hex_search(data: &str, reg_text: &str) -> Result<(bool, Vec<(usize, usize)>, String), MyError> {
+type HexSearchResult = (bool, Vec<(usize, usize)>, String);
+
+fn hex_search(data: &str, reg_text: &str) -> Result<HexSearchResult, MyError> {
     let reg = Regex::new(&reg_text.to_ascii_lowercase()).map_err(MyError::from)?;
     let mut locs: Vec<(usize, usize)> = Vec::new();
     let mut s = String::new();
     let mut isfind = false;
     if let Some(find) = reg.captures(data) {
-        for item in find.iter() {
-            if let Some(x) = item {
-                locs.push((x.start() / 2, x.end() / 2));
-                s = x.as_str().into();
-                isfind = true;
-            }
+        for x in find.iter().flatten() {
+            locs.push((x.start() / 2, x.end() / 2));
+            s = x.as_str().into();
+            isfind = true;
         }
     }
     Ok((isfind, locs, s))
