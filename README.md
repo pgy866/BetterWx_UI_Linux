@@ -1,5 +1,5 @@
 # Better WeChat for Linux
-
+本项目来自分支 https://gitee.com/ChaoYouAi/better-wx-linux-ui
 
 <h3 align="center"><img src="https://raw.githubusercontent.com/afaa1991/BetterWx-UI/refs/heads/1.1.3/src-tauri/icons/128x128@2x.png" width="250px"></h3>
 
@@ -9,7 +9,7 @@
 </p>
 
 
-微信Linux版 支持4.0.2 双开&防撤回&多账号共存 UI工具
+wx Linux版 支持4.0.2 双开&防撤回&多账号共存 UI工具
 支持平台：linux x64
 
 版本支持：4.0+
