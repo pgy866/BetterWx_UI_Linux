@@ -33,7 +33,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
@@ -50,7 +49,10 @@ jobs:
             ${{ runner.os }}-cargo-
 
       - name: Install npm dependencies
-        run: npm install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm ls @rollup/rollup-linux-x64-gnu 2>/dev/null || npm install @rollup/rollup-linux-x64-gnu
 
       - name: Build frontend
         run: npm run build
@@ -104,18 +106,24 @@ jobs:
 
       - name: Setup Rust
         run: |
+          export HOME=/root
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          echo "/root/.cargo/bin" >> $GITHUB_PATH
+        env:
+          HOME: /root
 
       - name: Install npm dependencies
-        run: npm install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm ls @rollup/rollup-linux-x64-gnu 2>/dev/null || npm install @rollup/rollup-linux-x64-gnu
 
       - name: Build frontend
         run: npm run build
 
       - name: Build Tauri app
         run: |
-          . "$HOME/.cargo/env"
+          export PATH="/root/.cargo/bin:$PATH"
           cd src-tauri && cargo build --release
 
       - name: Upload Deepin V23 build artifact
