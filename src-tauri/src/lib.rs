@@ -30,7 +30,7 @@ fn wx_do_patch(patch_info: serde_json::Value) -> Result<Vec<CoexistFileInfo>, My
 #[tauri::command]
 fn wx_del_corexist(list: String) -> Result<(), MyError> {
     let files: Vec<CoexistFileInfo> =
-        serde_json::from_str(&list).map_err(|e| MyError::SerdeJsonError(e))?;
+        serde_json::from_str(&list).map_err(MyError::SerdeJsonError)?;
     wx::del_corexist(&files)
 }
 
