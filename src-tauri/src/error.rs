@@ -1,9 +1,8 @@
 use thiserror::Error;
 
-// 自定义错误类型的定义
 #[derive(Error, Debug)]
 pub enum MyError {
-    #[error("读写文件失败,请用管理员模式运行,或解除占用")]
+    #[error("读写文件失败，请使用 sudo 运行，或确保文件未被占用")]
     IoError(#[from] std::io::Error),
     #[error("正则错误")]
     RegError(#[from] regex::Error),
@@ -14,19 +13,19 @@ pub enum MyError {
     #[error("特征码错误")]
     PatternError,
     #[error("不支持的版本")]
-    UnSpuuortVersion,
+    UnsupportedVersion,
     #[error("读取文件失败")]
     ReadFileError,
-    #[error("微信地址错误")]
+    #[error("微信路径错误")]
     WXPathError,
     #[error("搜索{0}地址失败")]
     SearchPatchLocError(String),
     #[error("等待初始化")]
     NeedInitFirst,
-    #[error("保存文件失败,请用管理员模式运行,或解除占用")]
+    #[error("保存文件失败，请使用 sudo 运行，或确保文件未被占用")]
     SaveFileError,
     #[error("获取文件列表失败")]
-    ReadDirRrror,
+    ReadDirError,
     #[error("运行文件失败")]
     RunAppError,
 }
