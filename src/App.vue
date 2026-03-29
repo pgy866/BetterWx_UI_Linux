@@ -61,7 +61,7 @@ onMounted(async () => {
   //获取 lock.ini 文件夹路径
   let r = await check_admin()
   if (!r) {
-    await message('请以管理员模式运行', { title: '消息', kind: 'error' });
+    await message('请使用 sudo 运行以获取必要权限', { title: '消息', kind: 'error' });
     await exit(1);
     return
   }
@@ -75,7 +75,7 @@ onMounted(async () => {
   }
   wx_loc.value = temp[0]
   wx_ver.value = temp[1]
-  wx_path.value = temp.join("\\") + "\\Wexin.dll"
+  wx_path.value = temp.join("/") + "/libWeixinCore.so"
   await wx_init()
   loading.value = false
 })
@@ -125,7 +125,7 @@ async function select_file() {
 function wx_path_input(e) {
   const v = e.currentTarget.value.trim()
   if (v == "") return
-  deal_wx_path(v, fasle)
+  deal_wx_path(v, false)
 }
 
 /**
@@ -135,12 +135,12 @@ function wx_path_input(e) {
  */
 async function deal_wx_path(file, show_toast) {
   if (!file) return
-  if (!file.endsWith("Weixin.dll")) {
-    if (show_toast) show_contrast("错误的路径,请手动选择Weixin.dll文件", true)
+  if (!file.endsWith("libWeixinCore.so")) {
+    if (show_toast) show_contrast("错误的路径,请手动选择libWeixinCore.so文件", true)
     return
   }
-  let paths = file.split("\\")
-  let loc = paths.slice(0, -2).join("\\")
+  let paths = file.split("/")
+  let loc = paths.slice(0, -2).join("/")
   if (loc == wx_loc.value) return
   loading.value = true
   show_contrast("正在初始化")
@@ -222,7 +222,7 @@ async function open_52() {
 }
 
 async function open_github() {
-  await do_command("wx_open_url", { url: "https://github.com/afaa1991/BetterWx-UI" }, true, true)
+  await do_command("wx_open_url", { url: "https://github.com/pgy866/BetterWx_UI_Linux" }, true, true)
 }
 
 async function open_lanzou() {
@@ -276,7 +276,7 @@ async function do_command(command, arg, cb, show_loading, show_msg = false, msg 
 function show_contrast(detail, error = false, life) {
   let severity = error ? "error" : "contrast"
   life = life ? life : error ? 5000 : 2000
-  toast.add({ severity, summary: '消息', detail: detail, life: detail, life});
+  toast.add({ severity, summary: '消息', detail: detail, life: life });
 };
 
 /**

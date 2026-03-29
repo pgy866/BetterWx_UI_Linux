@@ -41,11 +41,11 @@ watchEffect(() => {
     patch_status.forEach(item => {
         if(item.name == "unlock"){
             unlock.value = item.status
-            unlock_unsupport.value = item.unsupport
+            unlock_unsupport.value = !item.support
         }
         if(item.name == "revoke"){
             revoke.value = item.status
-            revoke_unsupport.value = item.unsupport
+            revoke_unsupport.value = !item.support
         }
     });
 })
