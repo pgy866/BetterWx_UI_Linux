@@ -72,6 +72,7 @@ onMounted(async () => {
     show_contrast("获取安装目录失败,仅支持官方安装版本", true)
     loading.value = false
     return
+
   }
   wx_loc.value = temp[0]
   wx_ver.value = temp[1]
