@@ -29,18 +29,18 @@ pub fn init(exe_loc: &str, version: &str) -> Result<(), MyError> {
 pub fn install_loc() -> (String, String) {
     let mut install_location = String::new();
     let mut install_version = String::new();
-
+ 
     // Search common Linux installation paths
     for base_path in LINUX_WX_PATHS {
         let base = Path::new(base_path);
         if !base.exists() {
             continue;
         }
-
+ 
         let exe_path = base.join(WX_EXE_NAME);
         if exe_path.exists() {
             install_location = base_path.to_string();
-
+ 
             // Try to detect version from directory structure
             if let Ok(entries) = fs::read_dir(base) {
                 for entry in entries.filter_map(Result::ok) {
@@ -54,22 +54,22 @@ pub fn install_loc() -> (String, String) {
                     }
                 }
             }
-
+ 
             if install_version.is_empty() {
                 let lib_path = base.join(WX_LIB_NAME);
                 if lib_path.exists() {
                     install_version = detect_version_from_binary(&lib_path);
                 }
             }
-
+ 
             if !install_version.is_empty() {
                 break;
             }
         }
     }
-
+ 
     (install_location, install_version)
-}
+
 
 /// Try to detect WeChat version from binary strings
 fn detect_version_from_binary(lib_path: &Path) -> String {
